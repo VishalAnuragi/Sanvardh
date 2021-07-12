@@ -5,69 +5,68 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".signin.SignIn">
+    tools:context=".signin.SignIn"
+    android:background="@drawable/bg_signup">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="SignIn"
-        android:textSize="30sp"
-        android:textStyle="bold"/>
-
-    <LinearLayout
+    <androidx.cardview.widget.CardView
+        android:id="@+id/txtHolder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        android:layout_marginHorizontal="20dp"
-        android:orientation="vertical">
+        android:layout_margin="20dp"
+        app:cardCornerRadius="20dp">
 
 
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter Mobile Number :-"
-            android:textSize="17sp"/>
-
-        <EditText
-            android:id="@+id/signInNumber"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="17sp"/>
+            android:orientation="vertical"
+            android:background="@drawable/bg_itemlist">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Enter Password :-"
-            android:textSize="17sp"/>
-
-        <EditText
-            android:id="@+id/signInPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:maxLength="10"
-            android:textSize="17sp"/>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="10dp">
-
-            <Button
-                android:id="@+id/signInBtn"
-                android:layout_width="wrap_content"
+            <TextView
+                android:id="@+id/signUpText"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:text="SignIn"/>
+                android:text="SANVARDH"
+                android:textSize="40sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"
+                android:gravity="center_horizontal"/>
 
-        </RelativeLayout>
+            <TextView
+                android:id="@+id/signUpText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="APP"
+                android:textSize="40sp"
+                android:textColor="#000000"
+                android:textStyle="bold"
+                android:layout_marginVertical="10dp"
+                android:gravity="center_horizontal"/>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 
-    </LinearLayout>
 
 
+
+
+
+    <Button
+        android:id="@+id/signUpBtn"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="50dp"
+        android:background="#fff"
+        android:drawableStart="@drawable/ic_google"
+        android:paddingStart="40dp"
+        android:paddingEnd="40dp"
+        android:text="Sign in With Google"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        android:layout_marginHorizontal="20dp"/>
 
 </RelativeLayout>
