@@ -1,6 +1,7 @@
 package com.example.sanvardh.topicsRecycler
 
 import android.content.Context
+import android.content.Intent
 import android.media.Image
 import android.view.LayoutInflater
 import android.view.View
@@ -9,8 +10,10 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.cardview.widget.CardView
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sanvardh.R
+import com.example.sanvardh.ar_model.AR_Activity
 
 class topicAdapter(
     private val context: Context,
@@ -37,15 +40,23 @@ override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
     holder.bindView(images[position])
     holder.card.setOnClickListener {
 
+        var topic : String ?= null
+
         when (position) {
-            0 -> Toast.makeText(context , "Physics" , Toast.LENGTH_SHORT).show()
-            1 -> Toast.makeText(context , "Biology" , Toast.LENGTH_SHORT).show()
-            2 -> Toast.makeText(context , "Mechanics" , Toast.LENGTH_SHORT).show()
-            3 -> Toast.makeText(context , "Astronomy" , Toast.LENGTH_SHORT).show()
-            4 -> Toast.makeText(context , "Architecture" , Toast.LENGTH_SHORT).show()
-            5 -> Toast.makeText(context , "Chemistry" , Toast.LENGTH_SHORT).show()
+            0 -> topic = "PHYSICS"
+            1 -> topic = "BIOLOGY"
+            2 -> topic = "MECHANICS"
+            3 -> topic = "ASTRONOMY"
+            4 -> topic = "ARCHITECTURE"
+            5 -> topic = "CHEMISTRY"
 
         }
+
+        val intent = Intent(context, AR_Activity::class.java).apply {
+            putExtra("TOPIC", topic)
+        }
+        context.startActivity(intent)
+
 
     }
 }
