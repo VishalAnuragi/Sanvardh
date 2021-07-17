@@ -8,6 +8,7 @@
     tools:context=".ar_model.AR_Activity">
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCard"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:elevation="10dp"
@@ -43,5 +44,13 @@
 
 
     </com.google.android.material.card.MaterialCardView>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/materialCard">
+
+
+    </androidx.recyclerview.widget.RecyclerView>
 
 </RelativeLayout>
