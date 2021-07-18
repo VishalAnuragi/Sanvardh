@@ -5,9 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ar_model.AR_Activity">
+    tools:context=".ar_model.AR_Activity"
+    android:background="#efefef">
 
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:id="@+id/materialCard"
         android:layout_width="match_parent"
         android:layout_height="100dp"
@@ -34,18 +35,16 @@
                 android:layout_centerVertical="true"
                 android:text="title"
                 android:textStyle="bold|normal"
-                android:textColor="#efefef"
+                android:textColor="#ffffff"
                 android:layout_marginHorizontal="20dp"
-                android:textSize="22sp"/>
+                android:textSize="25sp"/>
 
         </RelativeLayout>
 
-
-
-
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/innerRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/materialCard">
