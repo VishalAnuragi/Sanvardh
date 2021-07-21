@@ -4,6 +4,18 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
 
+    <!-- Features -->
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="false"  />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <uses-feature
+        android:name="android.hardware.camera.ar"
+        android:required="false"  />
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -11,7 +23,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".ar_model.AR_Activity"> </activity>
+        <activity android:name=".ar.AR_Activity"> </activity>
+        <activity android:name=".ar_model.Models_Activity"> </activity>
         <activity android:name=".signin.SignIn"> </activity>
         <activity android:name=".splash.SplashActivity">
             <intent-filter>
@@ -24,6 +37,11 @@
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar"> </activity>
+
+        <meta-data
+            android:name="com.google.ar.core"
+            android:value="optional" />
+
     </application>
 
 </manifest>

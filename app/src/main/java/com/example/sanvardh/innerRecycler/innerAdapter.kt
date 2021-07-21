@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sanvardh.R
-import com.example.sanvardh.ar_model.AR_Activity
+import com.example.sanvardh.ar_model.Models_Activity
 
 class innerAdapter (
     private val context: Context,
@@ -46,7 +46,7 @@ class innerAdapter (
                 4 -> topic = "ARCHITECTURE"
                 5 -> topic = "CHEMISTRY"
             }
-            val intent = Intent(context, AR_Activity::class.java).apply {
+            val intent = Intent(context, Models_Activity::class.java).apply {
                 putExtra("TOPIC", topic)
             }
             context.startActivity(intent)

@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sanvardh.R
-import com.example.sanvardh.ar_model.AR_Activity
+import com.example.sanvardh.ar_model.Models_Activity
 
 class topicAdapter(
     private val context: Context,
@@ -49,7 +49,7 @@ override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
 
         }
 
-        val intent = Intent(context, AR_Activity::class.java).apply {
+        val intent = Intent(context, Models_Activity::class.java).apply {
             putExtra("TOPIC", topic)
         }
         context.startActivity(intent)

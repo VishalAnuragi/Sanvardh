@@ -18,7 +18,7 @@ import com.example.sanvardh.innerRecycler.innerModel;
 import com.example.sanvardh.topicsRecycler.topicAdapter;
 import com.example.sanvardh.topicsRecycler.topicModel;
 
-public class AR_Activity extends AppCompatActivity {
+public class Models_Activity extends AppCompatActivity {
 
     private TextView title;
     private ImageView titleImg;
