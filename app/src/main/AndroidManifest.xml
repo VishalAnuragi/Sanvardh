@@ -3,6 +3,7 @@
     package="com.example.sanvardh">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <!-- Features -->
     <uses-feature
@@ -24,7 +25,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
         <activity android:name=".ar.AR_Activity"> </activity>
-        <activity android:name=".ar_model.Models_Activity"> </activity>
+        <activity android:name=".modelsActivity.Models_Activity"> </activity>
         <activity android:name=".signin.SignIn"> </activity>
         <activity android:name=".splash.SplashActivity">
             <intent-filter>

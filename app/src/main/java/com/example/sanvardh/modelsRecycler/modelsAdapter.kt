@@ -1,4 +1,4 @@
-package com.example.sanvardh.innerRecycler
+package com.example.sanvardh.modelsRecycler
 
 import android.content.Context
 import android.content.Intent
@@ -10,31 +10,33 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.sanvardh.R
-import com.example.sanvardh.ar_model.Models_Activity
+import com.example.sanvardh.ar.AR_Activity
+import com.example.sanvardh.modelsActivity.Models_Activity
 
-class innerAdapter (
+class modelsAdapter (
     private val context: Context,
-    private val images: Array<innerModel>
-        ) : RecyclerView.Adapter<innerAdapter.ImageViewHolder>() {
+    private val images: Array<modelsModel>
+        ): RecyclerView.Adapter<modelsAdapter.ImageViewHolder>() {
+
 
     class ImageViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val img = itemView.findViewById<ImageView>(R.id.modelImage)
         val imgTitle = itemView.findViewById<TextView>(R.id.modelTitle)
         val card = itemView.findViewById<CardView>(R.id.cardModel)
 
-        fun bindView(image: innerModel) {
-            img.setImageResource(image.imageSrc)
-            imgTitle.text = image.title
+        fun bindView(modelsModel: modelsModel) {
+            img.setImageResource(modelsModel.imageSrc)
+            imgTitle.text = modelsModel.title
         }
     }
 
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder =
+    ImageViewHolder(LayoutInflater.from(context).inflate(R.layout.item_model, parent, false))
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): innerAdapter.ImageViewHolder =
-        innerAdapter.ImageViewHolder( LayoutInflater.from(context).inflate(R.layout.item_model, parent, false))
-
-    override fun onBindViewHolder(holder: innerAdapter.ImageViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: ImageViewHolder, position: Int) {
         holder.bindView(images[position])
         holder.card.setOnClickListener {
+
 
             var topic : String ?= null
 
@@ -45,13 +47,18 @@ class innerAdapter (
                 3 -> topic = "ASTRONOMY"
                 4 -> topic = "ARCHITECTURE"
                 5 -> topic = "CHEMISTRY"
+
             }
-            val intent = Intent(context, Models_Activity::class.java).apply {
+
+            val intent = Intent(context, AR_Activity::class.java).apply {
                 putExtra("TOPIC", topic)
             }
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
             context.startActivity(intent)
         }
     }
 
     override fun getItemCount(): Int = images.size
+
+
 }

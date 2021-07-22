@@ -1,22 +1,19 @@
-package com.example.sanvardh.ar_model;
+package com.example.sanvardh.modelsActivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.sanvardh.R;
-import com.example.sanvardh.innerRecycler.innerAdapter;
-import com.example.sanvardh.innerRecycler.innerModel;
-import com.example.sanvardh.topicsRecycler.topicAdapter;
-import com.example.sanvardh.topicsRecycler.topicModel;
+
+import com.example.sanvardh.modelsRecycler.modelsAdapter;
+import com.example.sanvardh.modelsRecycler.modelsModel;
 
 public class Models_Activity extends AppCompatActivity {
 
@@ -73,26 +70,21 @@ public class Models_Activity extends AppCompatActivity {
 
     private void createMainRecycler() {
 
-        innerModel innermodel1[] = {
+        modelsModel innermodel1[] = {
 
-                new innerModel("Physics", R.drawable.physics),
-                new innerModel("Biology", R.drawable.biology),
-                new innerModel("Mechanics", R.drawable.mechanics),
-                new innerModel("Astronomy", R.drawable.astronomy),
-                new innerModel("Architecture", R.drawable.architecture),
-                new innerModel("Chemistry", R.drawable.chemistry),
-                new innerModel("Physics", R.drawable.physics),
-                new innerModel("Biology", R.drawable.biology),
-                new innerModel("Mechanics", R.drawable.mechanics),
-                new innerModel("Astronomy", R.drawable.astronomy),
-                new innerModel("Architecture", R.drawable.architecture),
-                new innerModel("Chemistry", R.drawable.chemistry),
-                new innerModel("Physics", R.drawable.physics),
-                new innerModel("Biology", R.drawable.biology),
-                new innerModel("Mechanics", R.drawable.mechanics),
-                new innerModel("Astronomy", R.drawable.astronomy),
-                new innerModel("Architecture", R.drawable.architecture),
-                new innerModel("Chemistry", R.drawable.chemistry)
+                new modelsModel("Physics", R.drawable.physics),
+                new modelsModel("Biology", R.drawable.biology),
+                new modelsModel("Mechanics", R.drawable.mechanics),
+                new modelsModel("Astronomy", R.drawable.astronomy),
+                new modelsModel("Architecture", R.drawable.architecture),
+                new modelsModel("Chemistry", R.drawable.chemistry),
+                new modelsModel("Physics", R.drawable.physics),
+                new modelsModel("Biology", R.drawable.biology),
+                new modelsModel("Mechanics", R.drawable.mechanics),
+                new modelsModel("Astronomy", R.drawable.astronomy),
+                new modelsModel("Architecture", R.drawable.architecture),
+                new modelsModel("Chemistry", R.drawable.chemistry),
+
         };
 
         innerRecycler = findViewById(R.id.innerRecycler);
@@ -100,7 +92,7 @@ public class Models_Activity extends AppCompatActivity {
         innerRecycler.setHasFixedSize(true);
 
 
-        innerAdapter inneradapter = new innerAdapter(getApplicationContext() , innermodel1);
+        modelsAdapter inneradapter = new modelsAdapter(getApplicationContext() , innermodel1);
         innerRecycler.setAdapter(inneradapter);
         innerRecycler.setItemAnimator(new DefaultItemAnimator());
 
