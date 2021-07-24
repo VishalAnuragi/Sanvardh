@@ -6,12 +6,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".modelsActivity.Models_Activity"
-    android:background="#efefef">
+    android:background="@color/colorPrimaryLight">
+
+    <LinearLayout
+        android:id="@+id/materialCardLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/colorPrimary"
+        android:paddingVertical="3dp">
+
 
     <androidx.cardview.widget.CardView
         android:id="@+id/materialCard"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="130dp"
         android:elevation="10dp"
         android:background="@drawable/bg_itemlist"
         app:cardCornerRadius="10dp"
@@ -19,8 +27,8 @@
         android:layout_marginHorizontal="5dp">
 
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:id="@+id/titleImg"
@@ -32,22 +40,25 @@
                 android:id="@+id/titleTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="3dp"
                 android:text="title"
                 android:textStyle="bold|normal"
                 android:textColor="#ffffff"
                 android:layout_marginHorizontal="20dp"
-                android:textSize="25sp"/>
+                android:textSize="30sp"/>
 
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
 
+    </LinearLayout>
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/innerRecycler"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/materialCard">
+        android:layout_below="@+id/materialCardLayout">
 
 
     </androidx.recyclerview.widget.RecyclerView>

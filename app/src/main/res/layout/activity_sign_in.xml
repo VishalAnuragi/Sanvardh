@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".signin.SignIn"
-    android:background="@drawable/bg_signup">
+    android:background="@drawable/bg_splash">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/txtHolder"
@@ -16,51 +16,52 @@
         app:cardCornerRadius="20dp">
 
 
-        <LinearLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:background="@drawable/bg_itemlist">
+            android:background="@color/colorPrimaryLight">
+
+            <ImageView
+                android:id="@+id/imageViewicon"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/sanvardhicon" />
+
+            <ImageView
+                android:id="@+id/imageViewtitle"
+                android:layout_width="200dp"
+                android:layout_height="90dp"
+                android:layout_below="@+id/imageViewicon"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                app:srcCompat="@drawable/sanvardhtitle" />
 
             <TextView
-                android:id="@+id/signUpText"
-                android:layout_width="match_parent"
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="SANVARDH"
-                android:textSize="40sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:layout_marginVertical="10dp"
-                android:gravity="center_horizontal"/>
+                android:layout_below="@+id/imageViewtitle"
+                android:layout_centerHorizontal="true"
+                android:textSize="17sp"
+                android:layout_margin="5dp"
+                android:textColor="#ffffff"
+                android:text="@string/nav_header_subtitle" />
 
-            <TextView
-                android:id="@+id/signUpText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="APP"
-                android:textSize="40sp"
-                android:textColor="#000000"
-                android:textStyle="bold"
-                android:layout_marginVertical="10dp"
-                android:gravity="center_horizontal"/>
-
-        </LinearLayout>
+        </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
-
-
-
-
-
 
 
     <Button
         android:id="@+id/signUpBtn"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_centerInParent="true"
+        android:layout_below="@+id/txtHolder"
         android:layout_marginTop="50dp"
-        android:background="#fff"
+        android:background="@color/colorPrimaryLight"
         android:drawableStart="@drawable/ic_google"
         android:paddingStart="40dp"
         android:paddingEnd="40dp"
