@@ -18,7 +18,7 @@ android {
 
     defaultConfig {
         applicationId "com.example.sanvardh"
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
@@ -35,6 +35,9 @@ android {
 }
 
 dependencies {
+
+
+
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
@@ -82,7 +85,4 @@ repositories {
     mavenCentral()
 }
 
-sceneform.asset('sampledata/TocoToucan.obj',
-        'default',
-        'sampledata/TocoToucan.sfa',
-        'src/main/assets/TocoToucan')
+

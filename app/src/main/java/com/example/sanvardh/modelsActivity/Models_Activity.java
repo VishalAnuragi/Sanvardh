@@ -6,7 +6,10 @@ import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -20,6 +23,8 @@ public class Models_Activity extends AppCompatActivity {
     private TextView title;
     private ImageView titleImg;
     private RecyclerView innerRecycler;
+    public String topic;
+    public String topicShared;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +35,13 @@ public class Models_Activity extends AppCompatActivity {
         titleImg = findViewById(R.id.titleImg);
 
         Bundle bundle = getIntent().getExtras();
-        String topic = bundle.getString("TOPIC");
+         topic = bundle.getString("TOPIC");
+
+        SharedPreferences preferences = PreferenceManager.getDefaultSharedPreferences(this);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("TOPIC",topic);
+        editor.apply();
+
 
         createTitles(topic);
     }
@@ -43,14 +54,10 @@ public class Models_Activity extends AppCompatActivity {
 
                 modelsModel innermodel1[] = {
 
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics),
-                        new modelsModel("Physics", R.drawable.physics)
+                        new modelsModel("Cube", R.drawable.cube),
+                        new modelsModel("Antique Camera", R.drawable.antiquecamera),
+                        new modelsModel("Boom Box", R.drawable.boombox),
+                        new modelsModel("SciFi Helmet", R.drawable.helmet)
                 };
 
                 createModelsRecycler(innermodel1);
@@ -61,14 +68,9 @@ public class Models_Activity extends AppCompatActivity {
 
                 modelsModel innermodel2[] = {
 
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology),
-                        new modelsModel("Biology", R.drawable.biology)
+                        new modelsModel("Fish", R.drawable.fish),
+                        new modelsModel("Fox", R.drawable.fox),
+                        new modelsModel("Avacado", R.drawable.avacado)
                 };
 
                 createModelsRecycler(innermodel2);
@@ -79,14 +81,11 @@ public class Models_Activity extends AppCompatActivity {
 
                 modelsModel innermodel3[] = {
 
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics),
-                        new modelsModel("Mechanics", R.drawable.mechanics)
+                        new modelsModel("2 Stroke Engine", R.drawable.twostrokeengine),
+                        new modelsModel("Gear Box", R.drawable.gearbox),
+                        new modelsModel("Reciprocating Saw", R.drawable.saw),
+                        new modelsModel("Delivery Truck", R.drawable.truck),
+                        new modelsModel("Robot", R.drawable.brainstem)
                 };
 
                 createModelsRecycler(innermodel3);
@@ -115,14 +114,8 @@ public class Models_Activity extends AppCompatActivity {
 
                 modelsModel innermodel5[] = {
 
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture),
-                        new modelsModel("Architecture", R.drawable.architecture)
+                        new modelsModel("Sponza", R.drawable.sponza),
+                        new modelsModel("Virtual City", R.drawable.virtualcity)
                 };
 
                 createModelsRecycler(innermodel5);
