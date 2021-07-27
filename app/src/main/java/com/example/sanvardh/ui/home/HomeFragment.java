@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
@@ -16,18 +17,28 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.sanvardh.R;
 import com.example.sanvardh.topicsRecycler.topicAdapter;
 import com.example.sanvardh.topicsRecycler.topicModel;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 
 public class HomeFragment extends Fragment {
 
     private HomeViewModel homeViewModel;
     private RecyclerView topicRecycler;
+    TextView tt;
 
     public View onCreateView(@NonNull LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         homeViewModel = ViewModelProviders.of(this).get(HomeViewModel.class);
         View root = inflater.inflate(R.layout.fragment_home, container, false);
 
-
+        tt = root.findViewById(R.id.userName);
+        try {
+            FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+            String name = user.getDisplayName();
+            tt.setText(name.toString());
+        }catch (Exception e){
+            e.printStackTrace();
+        }
 
         createRecycler(root);
 
